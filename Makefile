@@ -1,7 +1,7 @@
 .PHONY: all
 
 update-site:
-	make -C ../busybe_app build-web-app-dev
+	cd ../busybe_app; flutter build web --base-href /busybe-web-app-dev/; cd ../busybe-web-app-dev
 	cp -r ../busybe_app/build/web/ docs/
 	git commit -am "Update site from awsome makefile"
 	git push
